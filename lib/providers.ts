@@ -6,7 +6,8 @@ export type ProviderId =
   | "viduki-3"
   | "viduki-4"
   | "vidfast"
-  | "vidy";
+  | "vidy"
+  | "vidsrc";
 
 export interface ProviderBuildOptions {
   tmdbId: number;
@@ -60,6 +61,17 @@ export const providers: Provider[] = [
       const resume = progress && progress > 10 ? `&progress=${Math.floor(progress)}` : "";
       return `https://vidy.st/tv/${tmdbId}/${season}/${episode}?color=${BRAND_COLOR}&autoplay=true&nextEpisode=true&episodeSelector=true&autoplayNextEpisode=true${resume}`;
     },
+  },
+  {
+    id: "vidsrc",
+    name: "Vidsrc",
+    badge: "Free",
+    description: "Alternative streaming embeds",
+    origins: ["https://vidsrc.mov", "https://www.vidsrc.mov"],
+    supportsProgress: false,
+    supportsFallbackEvent: false,
+    movieUrl: ({ tmdbId }) => `https://vidsrc.mov/movie/${tmdbId}`,
+    tvUrl: ({ tmdbId, season = 1, episode = 1 }) => `https://vidsrc.mov/tv/${tmdbId}/${season}/${episode}`,
   },
   viduki(1, "Multi-server", "Auto-selecting backend with the widest catalogue."),
   viduki(2, "Multi-language", "Alternate backends with additional language tracks."),
