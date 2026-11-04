@@ -44,23 +44,6 @@ function viduki(api: 1 | 2 | 3 | 4, badge: string, description: string): Provide
 }
 
 export const providers: Provider[] = [
-  viduki(1, "Multi-server", "Auto-selecting backend with the widest catalogue."),
-  viduki(2, "Multi-language", "Alternate backends with additional language tracks."),
-  viduki(3, "Multi-embed", "Different embed pool when the first two are busy."),
-  viduki(4, "Premium", "Priority embeds and the fastest available source."),
-  {
-    id: "vidfast",
-    name: "VidFast",
-    badge: "Fast",
-    description: "Fast player with automatic next-episode controls.",
-    origins: ["https://vidfast.vc", "https://www.vidfast.vc"],
-    supportsProgress: false,
-    supportsFallbackEvent: false,
-    movieUrl: ({ tmdbId }) =>
-      `https://vidfast.vc/movie/${tmdbId}?theme=${BRAND_COLOR}&autoPlay=true`,
-    tvUrl: ({ tmdbId, season = 1, episode = 1 }) =>
-      `https://vidfast.vc/tv/${tmdbId}/${season}/${episode}?theme=${BRAND_COLOR}&autoPlay=true&nextButton=true&autoNext=true`,
-  },
   {
     id: "vidy",
     name: "Vidy",
@@ -78,9 +61,26 @@ export const providers: Provider[] = [
       return `https://vidy.st/tv/${tmdbId}/${season}/${episode}?color=${BRAND_COLOR}&autoplay=true&nextEpisode=true&episodeSelector=true&autoplayNextEpisode=true${resume}`;
     },
   },
+  viduki(1, "Multi-server", "Auto-selecting backend with the widest catalogue."),
+  viduki(2, "Multi-language", "Alternate backends with additional language tracks."),
+  viduki(3, "Multi-embed", "Different embed pool when the first two are busy."),
+  viduki(4, "Premium", "Priority embeds and the fastest available source."),
+  {
+    id: "vidfast",
+    name: "VidFast",
+    badge: "Fast",
+    description: "Fast player with automatic next-episode controls.",
+    origins: ["https://vidfast.vc", "https://www.vidfast.vc"],
+    supportsProgress: false,
+    supportsFallbackEvent: false,
+    movieUrl: ({ tmdbId }) =>
+      `https://vidfast.vc/movie/${tmdbId}?theme=${BRAND_COLOR}&autoPlay=true`,
+    tvUrl: ({ tmdbId, season = 1, episode = 1 }) =>
+      `https://vidfast.vc/tv/${tmdbId}/${season}/${episode}?theme=${BRAND_COLOR}&autoPlay=true&nextButton=true&autoNext=true`,
+  },
 ];
 
-export const defaultProviderId: ProviderId = "viduki-1";
+export const defaultProviderId: ProviderId = "vidy";
 
 export function getProvider(id: string | null | undefined): Provider {
   return providers.find((provider) => provider.id === id) ?? providers[0];
