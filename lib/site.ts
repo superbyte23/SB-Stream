@@ -1,4 +1,4 @@
-export const siteName = "1FLEX";
+export const siteName = "SB Stream";
 
 export function getSiteUrl(): string {
   const configured = process.env.NEXT_PUBLIC_SITE_URL?.trim();

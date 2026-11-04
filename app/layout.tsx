@@ -34,7 +34,6 @@ export const metadata: Metadata = {
     "watch tv shows",
     "movie catalogue",
     "tv series",
-    "1FLEX",
   ],
   alternates: {
     canonical: "/",

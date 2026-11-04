@@ -1,8 +1,8 @@
-# 1FLEX
+# SB Stream
 
-A production-ready, Vercel-deployable streaming front end built with Next.js 16. The homepage preserves the supplied **1Flex** dark cinematic layout and turns it into a real catalogue: TMDB metadata, search, title pages, season/episode browsing, watchlists, continue-watching progress, and a multi-server player that embeds Viduki, VidFast, and Vidy.
+A production-ready, Vercel-deployable streaming front end built with Next.js 16. The homepage preserves the supplied **SB Stream** dark cinematic layout and turns it into a real catalogue: TMDB metadata, search, title pages, season/episode browsing, watchlists, continue-watching progress, and a multi-server player that embeds Viduki, VidFast, and Vidy.
 
-> 1FLEX does not host any video. Playback is embedded from independent third-party providers. All media rights belong to their respective owners.
+> SB Stream does not host any video. Playback is embedded from independent third-party providers. All media rights belong to their respective owners.
 
 ---
 
@@ -180,7 +180,7 @@ lib/
   types.ts images.ts utils.ts site.ts
 ```
 
-The original design reference is kept at `1Flex-style streaming homepage.html`.
+The original design reference is kept at `SB Stream-style streaming homepage.html`.
 
 ---
 

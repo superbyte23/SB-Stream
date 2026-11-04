@@ -55,8 +55,8 @@ export function SiteHeader() {
           (scrolled || !isHome) && "is-solid",
         )}
       >
-        <Link className="logo" href="/" aria-label="1FLEX home">
-          1FLEX
+        <Link className="logo" href="/" aria-label="SB Stream home">
+          SB Stream
         </Link>
 
         <nav className="primary-nav" aria-label="Primary">

@@ -1,8 +1,8 @@
 {
-  "name": "1flex",
+  "name": "sbflix",
   "version": "1.0.0",
   "private": true,
-  "description": "1FLEX — a fast, TMDB-powered streaming front end with multi-server playback.",
+  "description": "SB Stream — a fast, TMDB-powered streaming front end with multi-server playback.",
   "engines": {
     "node": ">=20.9.0"
   },

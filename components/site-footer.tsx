@@ -8,11 +8,11 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="footer-inner">
         <div className="footer-brand">
-          <Link className="logo footer-logo" href="/" aria-label="1FLEX home">
-            1FLEX
+          <Link className="logo footer-logo" href="/" aria-label="SB Stream home">
+            SB Stream
           </Link>
           <p className="footer-disclaimer">
-            1FLEX is a catalogue and discovery interface. We do not host, upload, or
+            SB Stream is a catalogue and discovery interface. We do not host, upload, or
             store any video content. Playback is supplied by third-party embed
             providers; all media rights belong to their respective owners.
           </p>
