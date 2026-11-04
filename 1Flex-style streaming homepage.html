@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>1Flex - Stream Movies, TV Shows, Live TV &amp; Games</title>
+<style>
+:root{--bg:#141414;--surface:#1f1f1f;--text:#f2f2f2;--muted:#a3a3a3;--accent:#e50914;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141414;--surface:#1f1f1f;--text:#f2f2f2;--muted:#a3a3a3}}
+:root[data-theme="dark"]{--bg:#141414;--surface:#1f1f1f;--text:#f2f2f2;--muted:#a3a3a3}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 "Helvetica Neue",Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid #fff;outline-offset:2px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;align-items:center;gap:28px;padding:14px 4vw;background:linear-gradient(var(--bg),rgba(20,20,20,.85))}
+.logo{font-weight:800;font-size:26px;color:var(--accent);letter-spacing:-1px}
+nav{display:flex;gap:20px;overflow-x:auto;flex:1}
+nav a{color:var(--muted);font-size:14px;white-space:nowrap}
+nav a:hover,nav a.on{color:var(--text)}
+.search{background:var(--surface);border:1px solid #333;color:var(--text);padding:7px 12px;border-radius:4px;width:180px;max-width:35vw}
+.hero{position:relative;min-height:70vh;display:flex;align-items:flex-end;padding:0 4vw 8vh;background:linear-gradient(0deg,var(--bg) 5%,transparent 60%),linear-gradient(90deg,rgba(20,20,20,.9),transparent 70%),radial-gradient(circle at 75% 30%,#7a1d3a,#1b2a5a 55%,#0d1226)}
+.hero div{max-width:560px}
+.hero h1{font-size:clamp(34px,6vw,64px);line-height:1.05;margin:0 0 12px}
+.hero p{color:#d0d0d0;margin:0 0 20px}
+.btn{display:inline-block;padding:10px 24px;border-radius:4px;font-weight:700;border:0;cursor:pointer;font-size:16px}
+.play{background:#fff;color:#000}.info{background:rgba(120,120,120,.6);color:#fff;margin-left:10px}
+section{padding:8px 4vw 14px}
+h2{font-size:20px;margin:18px 0 10px}
+.row{display:flex;gap:10px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x proximity}
+.card{flex:0 0 160px;aspect-ratio:2/3;border-radius:6px;position:relative;overflow:hidden;scroll-snap-align:start;transition:transform .2s}
+.card:hover{transform:scale(1.06);z-index:2}
+.card span{position:absolute;left:0;right:0;bottom:0;padding:24px 10px 10px;font-size:13px;font-weight:600;background:linear-gradient(transparent,rgba(0,0,0,.85))}
+.wide .card{flex-basis:260px;aspect-ratio:16/9}
+.live::after{content:"LIVE";position:absolute;top:8px;left:8px;background:var(--accent);font-size:10px;font-weight:700;padding:2px 6px;border-radius:3px}
+footer{padding:30px 4vw;color:var(--muted);font-size:13px;border-top:1px solid #262626;margin-top:20px}
+@media (max-width:600px){.card{flex-basis:120px}.wide .card{flex-basis:200px}header{gap:12px}.search{display:none}}
+@media (prefers-reduced-motion:reduce){.card{transition:none}}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#home">1FLEX</a>
+  <nav>
+    <a class="on" href="#home">Home</a><a href="#movies">Movies</a><a href="#tv">TV Shows</a><a href="#live">Live TV</a><a href="#sports">Sports</a><a href="#games">Games</a>
+  </nav>
+  <input class="search" type="search" placeholder="Search titles" aria-label="Search titles">
+</header>
+
+<div class="hero" id="home">
+  <div>
+    <h1>Night Signal</h1>
+    <p>A radio operator in a mountain outpost picks up a broadcast from the future. Now she has seven days to decide who to warn.</p>
+    <a class="btn play" href="#movies">Play</a><a class="btn info" href="#movies">More info</a>
+  </div>
+</div>
+
+<section id="trending"><h2>Trending now</h2><div class="row" data-n="12" data-seed="0"></div></section>
+<section id="movies"><h2>Movies</h2><div class="row" data-n="12" data-seed="3"></div></section>
+<section id="tv"><h2>TV shows</h2><div class="row" data-n="12" data-seed="6"></div></section>
+<section id="live"><h2>Live TV</h2><div class="row wide live" data-n="8" data-seed="9" data-live="1"></div></section>
+<section id="sports"><h2>Sports</h2><div class="row wide" data-n="8" data-seed="2" data-live="1"></div></section>
+<section id="games"><h2>Games</h2><div class="row wide" data-n="8" data-seed="5"></div></section>
+
+<footer>1Flex layout demo with placeholder titles and artwork.</footer>
+
+<script>
+var names=["Night Signal","Harbor Lights","The Quiet Orbit","Paper Kingdoms","Last Train East","Glass Meridian","Salt &amp; Static","Ember Court","Deep Field","Rooftop Season","The Long Tide","Iron Garden","Velvet Circuit","Open Water","Coldwave","Sunday Heist"];
+var live=["News Now","Court Tonight","Music 24/7","Cooking Live","Match Day","Weather Desk","Kids Zone","Film Classics"];
+document.querySelectorAll(".row").forEach(function(row){
+  var n=+row.dataset.n,s=+row.dataset.seed,isLive=row.dataset.live;
+  for(var i=0;i<n;i++){
+    var h=((s+i)*47)%360,a=document.createElement("a");
+    a.className="card";a.href="#home";
+    a.style.background="linear-gradient(160deg,hsl("+h+",60%,38%),hsl("+((h+60)%360)+",55%,14%))";
+    a.innerHTML="<span>"+(isLive?live[(s+i)%live.length]:names[(s+i)%names.length])+"</span>";
+    row.appendChild(a);
+  }
+});
+</script>
+</body>
+</html>
