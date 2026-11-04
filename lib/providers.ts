@@ -67,7 +67,7 @@ export const providers: Provider[] = [
     name: "Vidsrc",
     badge: "Free",
     description: "Alternative streaming embeds",
-    origins: ["https://vidsrc.mov", "https://www.vidsrc.mov"],
+    origins: ["https://vidsrc.mov", "https://vidsrc.to", "https://www.vidsrc.mov", "https://www.vidsrc.to"],
     supportsProgress: false,
     supportsFallbackEvent: false,
     movieUrl: ({ tmdbId }) => `https://vidsrc.mov/movie/${tmdbId}`,
