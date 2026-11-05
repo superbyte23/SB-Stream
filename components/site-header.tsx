@@ -55,8 +55,8 @@ export function SiteHeader() {
           (scrolled || !isHome) && "is-solid",
         )}
       >
-        <Link className="logo" href="/" aria-label="SB Stream home">
-          SB Stream
+        <Link className="logo" href="/" aria-label="SBS home">
+          <img src="/logo.png" alt="SBS" style={{ height: "28px", width: "auto", display: "block" }} />
         </Link>
 
         <nav className="primary-nav" aria-label="Primary">
@@ -90,6 +90,14 @@ export function SiteHeader() {
 
       {menuOpen ? (
         <div className="mobile-menu" id="mobile-menu">
+          <button
+            type="button"
+            className="mobile-menu-close"
+            aria-label="Close menu"
+            onClick={() => setMenuOpen(false)}
+          >
+            <X size={20} />
+          </button>
           <div className="mobile-menu-inner">
             <SearchBox
               className="mobile-search"
@@ -110,7 +118,7 @@ export function SiteHeader() {
               ))}
             </nav>
             <p className="mobile-menu-note">
-              Movies and series stream through third-party embed providers.
+              Movies and series stream through SBS.
             </p>
           </div>
         </div>

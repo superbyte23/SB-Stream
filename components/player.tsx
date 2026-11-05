@@ -175,7 +175,7 @@ export function Player({ media, season, episode, episodeName }: PlayerProps) {
           <iframe
             key={`${provider.id}-${media.id}-${season ?? 0}-${episode ?? 0}-${resumeAt}`}
             src={embedUrl}
-            title={`${media.title} — ${provider.name} player`}
+            title={`${media.title} — ${provider.name}`}
             allow="encrypted-media; autoplay *; fullscreen *; picture-in-picture *"
             allowFullScreen
             loading="eager"
@@ -221,6 +221,7 @@ export function Player({ media, season, episode, episodeName }: PlayerProps) {
                 aria-checked={item.id === providerId}
                 className={cn("server-button", item.id === providerId && "is-active")}
                 onClick={() => selectProvider(item.id)}
+                aria-label={item.name}
               >
                 <span>{item.name}</span>
                 <small>{item.badge}</small>
@@ -244,15 +245,12 @@ export function Player({ media, season, episode, episodeName }: PlayerProps) {
         <p>
           <strong>{provider.name}</strong> — {provider.description}
         </p>
-        <p>
-          Stream not starting? Switch servers. Playback is embedded from a third-party
-          provider; 1FLEX does not host any video.
-        </p>
+        <p>Stream not starting? Switch servers.</p>
         {resumeAt > 0 ? (
           <p className="player-resume-note">
             {provider.supportsProgress
               ? `Resuming from ${formatClock(resumeAt)}.`
-              : `Your place (${formatClock(resumeAt)}) is saved. Choose Vidy to resume automatically.`}
+              : `Your place (${formatClock(resumeAt)}) is saved.`}
           </p>
         ) : null}
         {notice ? (

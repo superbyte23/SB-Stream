@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `Watch ${title.title} — S${seasonNumber}E${episodeNumber}`,
     description: truncate(
-      `Watch ${title.title} season ${seasonNumber}, episode ${episodeNumber} on 1FLEX.`,
+      `Watch ${title.title} season ${seasonNumber}, episode ${episodeNumber} on SBS.`,
       160,
     ),
     robots: { index: false, follow: true },

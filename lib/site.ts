@@ -1,4 +1,4 @@
-export const siteName = "SB Stream";
+export const siteName = "SBS";
 
 export function getSiteUrl(): string {
   const configured = process.env.NEXT_PUBLIC_SITE_URL?.trim();
@@ -14,4 +14,4 @@ export function getSiteUrl(): string {
 }
 
 export const siteDescription =
-  "Stream trending movies and TV shows with a fast, cinematic interface and multiple playback servers.";
+  "Stream trending movies and TV shows with a fast, cinematic interface.";

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import NextTopLoader from "nextjs-toploader";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { getSiteUrl, siteDescription, siteName } from "@/lib/site";
@@ -82,6 +83,16 @@ export default function RootLayout({
         <a className="skip-link" href="#main">
           Skip to content
         </a>
+        <NextTopLoader
+          color="#9333ea"
+          height={3}
+          showSpinner={false}
+          easing="ease"
+          speed={200}
+          crawlSpeed={200}
+          shadow="0 0 10px #9333ea, 0 0 5px #9333ea"
+          zIndex={9999}
+        />
         <SiteHeader />
         <main id="main">{children}</main>
         <SiteFooter />

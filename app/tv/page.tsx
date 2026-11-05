@@ -10,7 +10,7 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "TV Shows",
   description:
-    "Browse popular series and top-rated television, then stream episodes instantly with multiple playback servers.",
+    "Browse popular series and top-rated television, then stream episodes instantly.",
   alternates: { canonical: "/tv" },
 };
 

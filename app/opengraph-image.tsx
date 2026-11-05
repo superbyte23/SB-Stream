@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "1FLEX — Stream Movies & TV Shows";
+export const alt = "SBS — Stream Movies & TV Shows";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -34,7 +34,7 @@ export default function OpengraphImage() {
               width: 54,
               height: 54,
               borderRadius: 12,
-              background: "#e50914",
+              background: "#9333ea",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -51,8 +51,8 @@ export default function OpengraphImage() {
               }}
             />
           </div>
-          <div style={{ fontSize: 42, fontWeight: 900, letterSpacing: -1.5, color: "#e50914" }}>
-            1FLEX
+          <div style={{ fontSize: 42, fontWeight: 900, letterSpacing: -1.5, color: "#9333ea" }}>
+            SBS
           </div>
         </div>
         <div
@@ -74,7 +74,7 @@ export default function OpengraphImage() {
             maxWidth: 780,
           }}
         >
-          A fast, cinematic catalogue with multiple playback servers.
+          A fast, cinematic catalogue.
         </div>
       </div>
     ),

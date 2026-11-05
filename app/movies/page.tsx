@@ -10,7 +10,7 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "Movies",
   description:
-    "Browse popular movies and critically acclaimed films, then stream instantly with multiple playback servers.",
+    "Browse popular movies and critically acclaimed films, then stream instantly.",
   alternates: { canonical: "/movies" },
 };
 
@@ -37,7 +37,7 @@ export default async function MoviesPage({ searchParams }: PageProps) {
         <div className="page-head-copy">
           <p className="page-eyebrow">Catalogue</p>
           <h1>Movies</h1>
-          <p>Big releases and enduring favourites, ready to play on any server.</p>
+          <p>Big releases and enduring favourites, ready to watch.</p>
         </div>
 
         <div className="sort-tabs" aria-label="Sort movies">

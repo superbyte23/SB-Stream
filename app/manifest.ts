@@ -2,10 +2,10 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "1FLEX — Stream Movies & TV Shows",
-    short_name: "1FLEX",
+    name: "SBS — Stream Movies & TV Shows",
+    short_name: "SBS",
     description:
-      "Stream trending movies and TV shows with a fast, cinematic interface and multiple playback servers.",
+      "Stream trending movies and TV shows with a fast, cinematic interface.",
     start_url: "/",
     display: "standalone",
     background_color: "#141414",

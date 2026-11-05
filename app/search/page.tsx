@@ -22,8 +22,8 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
   return {
     title: query ? `Search: ${query}` : "Search",
     description: query
-      ? `Search results for ${query} across the 1FLEX movie and TV catalogue.`
-      : "Search the 1FLEX catalogue for movies and TV shows.",
+      ? `Search results for ${query} across the SBS movie and TV catalogue.`
+      : "Search the SBS catalogue for movies and TV shows.",
     alternates: { canonical: "/search" },
     robots: { index: false, follow: true },
   };
@@ -55,7 +55,7 @@ export default async function SearchPage({ searchParams }: PageProps) {
           <p>
             {query
               ? `${data?.totalResults ?? 0} matching titles in the catalogue.`
-              : "Search across movies and TV shows, then pick a server and press play."}
+              : "Search across movies and TV shows and press play."}
           </p>
         </div>
       </header>

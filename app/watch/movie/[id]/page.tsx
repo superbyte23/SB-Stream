@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: `Watch ${title.title}`,
-    description: truncate(`Watch ${title.title} on 1FLEX. ${title.overview}`, 160),
+    description: truncate(`Watch ${title.title} on SBS. ${title.overview}`, 160),
     robots: { index: false, follow: true },
   };
 }
