@@ -4,6 +4,7 @@ import "./globals.css";
 import NextTopLoader from "nextjs-toploader";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { DevToolsBlocker } from "@/components/devtools-blocker";
 import { getSiteUrl, siteDescription, siteName } from "@/lib/site";
 
 const geist = Geist({
@@ -93,6 +94,7 @@ export default function RootLayout({
           shadow="0 0 10px #9333ea, 0 0 5px #9333ea"
           zIndex={9999}
         />
+        <DevToolsBlocker />
         <SiteHeader />
         <main id="main">{children}</main>
         <SiteFooter />
